@@ -1035,20 +1035,20 @@ void IQS7222CComponent::write_settings_() {
     uint8_t i{0};
 
     WAIT_FOR_RDY_WINDOW();
-    this->write_register16(0x8000, (uint8_t *) &cycle_setup[0][1], 6, false);
-    this->write_register16(0x8100, (uint8_t *) &cycle_setup[1][1], 6, false);
-    this->write_register16(0x8200, (uint8_t *) &cycle_setup[2][1], 6, false);
-    this->write_register16(0x8300, (uint8_t *) &cycle_setup[3][1], 6, false);
-    this->write_register16(0x8400, (uint8_t *) &cycle_setup[4][1], 6, false);
-    this->write_register16(0x8500, (uint8_t *) &global_cycle_setup[1], 6, true);
+    this->write_register16(0x8000, (uint8_t *) &cycle_setup[0][1], 6);
+    this->write_register16(0x8100, (uint8_t *) &cycle_setup[1][1], 6);
+    this->write_register16(0x8200, (uint8_t *) &cycle_setup[2][1], 6);
+    this->write_register16(0x8300, (uint8_t *) &cycle_setup[3][1], 6);
+    this->write_register16(0x8400, (uint8_t *) &cycle_setup[4][1], 6);
+    this->write_register16(0x8500, (uint8_t *) &global_cycle_setup[1], 6);
     this->i2c_stop_and_delay_();
 
-    // this->write_register16(0x8000, (uint8_t *) &cycle_setup[0][1], 6, false);
-    // this->write_register16(0x8100, (uint8_t *) &cycle_setup[1][1], 6, false);
-    // this->write_register16(0x8200, (uint8_t *) &cycle_setup[2][1], 6, false);
-    // this->write_register16(0x8300, (uint8_t *) &cycle_setup[3][1], 6, false);
-    // this->write_register16(0x8400, (uint8_t *) &cycle_setup[4][1], 6, false);
-    // this->write_register16(0x8500, (uint8_t *) &global_cycle_setup[1], 6, false);
+    // this->write_register16(0x8000, (uint8_t *) &cycle_setup[0][1], 6);
+    // this->write_register16(0x8100, (uint8_t *) &cycle_setup[1][1], 6);
+    // this->write_register16(0x8200, (uint8_t *) &cycle_setup[2][1], 6);
+    // this->write_register16(0x8300, (uint8_t *) &cycle_setup[3][1], 6);
+    // this->write_register16(0x8400, (uint8_t *) &cycle_setup[4][1], 6);
+    // this->write_register16(0x8500, (uint8_t *) &global_cycle_setup[1], 6);
 
     // this->i2c_write_cont_((uint8_t *) &cycle_setup_0, sizeof(cycle_setup_0));
     // this->i2c_write_cont_((uint8_t *) &cycle_setup_1, sizeof(cycle_setup_1));
@@ -1059,34 +1059,34 @@ void IQS7222CComponent::write_settings_() {
 
     // for (i = 0; i < IQS7222C_MAX_BUTTONS; i++) {
     //   //      WAIT_FOR_RDY_WINDOW();
-    //   this->write_register16(0x9000 + i * 0x0100, (uint8_t *) &button_setup[i][1], 6, false);
+    //   this->write_register16(0x9000 + i * 0x0100, (uint8_t *) &button_setup[i][1], 6);
     //   // this->i2c_write_cont_((uint8_t *) &button_setup[i], sizeof(button_setup[i]));
     // }
     WAIT_FOR_RDY_WINDOW();
-    this->write_register16(0x9000, (uint8_t *) &button_setup[0][1], 6, false);
-    this->write_register16(0x9100, (uint8_t *) &button_setup[1][1], 6, false);
-    this->write_register16(0x9200, (uint8_t *) &button_setup[2][1], 6, false);
-    this->write_register16(0x9300, (uint8_t *) &button_setup[3][1], 6, false);
-    this->write_register16(0x9400, (uint8_t *) &button_setup[4][1], 6, false);
-    this->write_register16(0x9500, (uint8_t *) &button_setup[5][1], 6, false);
-    this->write_register16(0x9600, (uint8_t *) &button_setup[6][1], 6, false);
-    this->write_register16(0x9700, (uint8_t *) &button_setup[7][1], 6, false);
-    this->write_register16(0x9800, (uint8_t *) &button_setup[8][1], 6, false);
-    this->write_register16(0x9900, (uint8_t *) &button_setup[9][1], 6, true);
+    this->write_register16(0x9000, (uint8_t *) &button_setup[0][1], 6);
+    this->write_register16(0x9100, (uint8_t *) &button_setup[1][1], 6);
+    this->write_register16(0x9200, (uint8_t *) &button_setup[2][1], 6);
+    this->write_register16(0x9300, (uint8_t *) &button_setup[3][1], 6);
+    this->write_register16(0x9400, (uint8_t *) &button_setup[4][1], 6);
+    this->write_register16(0x9500, (uint8_t *) &button_setup[5][1], 6);
+    this->write_register16(0x9600, (uint8_t *) &button_setup[6][1], 6);
+    this->write_register16(0x9700, (uint8_t *) &button_setup[7][1], 6);
+    this->write_register16(0x9800, (uint8_t *) &button_setup[8][1], 6);
+    this->write_register16(0x9900, (uint8_t *) &button_setup[9][1], 6);
 
     this->i2c_stop_();
 
     WAIT_FOR_RDY_WINDOW();
-    this->write_register16(0xA000, (uint8_t *) &ch_setup[0][1], 6, false);
-    this->write_register16(0xA100, (uint8_t *) &ch_setup[1][1], 6, false);
-    this->write_register16(0xA200, (uint8_t *) &ch_setup[2][1], 6, false);
-    this->write_register16(0xA300, (uint8_t *) &ch_setup[3][1], 6, false);
-    this->write_register16(0xA400, (uint8_t *) &ch_setup[4][1], 6, false);
-    this->write_register16(0xA500, (uint8_t *) &ch_setup[5][1], 6, false);
-    this->write_register16(0xA600, (uint8_t *) &ch_setup[6][1], 6, false);
-    this->write_register16(0xA700, (uint8_t *) &ch_setup[7][1], 6, false);
-    this->write_register16(0xA800, (uint8_t *) &ch_setup[8][1], 6, false);
-    this->write_register16(0xA900, (uint8_t *) &ch_setup[9][1], 6, true);
+    this->write_register16(0xA000, (uint8_t *) &ch_setup[0][1], 6);
+    this->write_register16(0xA100, (uint8_t *) &ch_setup[1][1], 6);
+    this->write_register16(0xA200, (uint8_t *) &ch_setup[2][1], 6);
+    this->write_register16(0xA300, (uint8_t *) &ch_setup[3][1], 6);
+    this->write_register16(0xA400, (uint8_t *) &ch_setup[4][1], 6);
+    this->write_register16(0xA500, (uint8_t *) &ch_setup[5][1], 6);
+    this->write_register16(0xA600, (uint8_t *) &ch_setup[6][1], 6);
+    this->write_register16(0xA700, (uint8_t *) &ch_setup[7][1], 6);
+    this->write_register16(0xA800, (uint8_t *) &ch_setup[8][1], 6);
+    this->write_register16(0xA900, (uint8_t *) &ch_setup[9][1], 6);
 
     this->i2c_stop_();
 
@@ -1097,13 +1097,13 @@ void IQS7222CComponent::write_settings_() {
 
     ESP_LOGD(TAG, "before betas");
     WAIT_FOR_RDY_WINDOW();
-    this->write_register16(0xAA00, (uint8_t *) &filter_betas[1], 4, false);
-    this->write_register16(0xB000, (uint8_t *) &slider_wheel_setup_0[1], 20, false);
-    this->write_register16(0xB100, (uint8_t *) &slider_wheel_setup_1[1], 20, false);
-    this->write_register16(0xC000, (uint8_t *) &gpio_setting_0[1], 6, false);
-    this->write_register16(0xC100, (uint8_t *) &gpio_setting_1[1], 6, false);
-    this->write_register16(0xC200, (uint8_t *) &gpio_setting_2[1], 6, false);
-    this->write_register(0xD0, (uint8_t *) &pmu_sys_setting[1], sizeof(pmu_sys_setting) - 1, true);
+    this->write_register16(0xAA00, (uint8_t *) &filter_betas[1], 4);
+    this->write_register16(0xB000, (uint8_t *) &slider_wheel_setup_0[1], 20);
+    this->write_register16(0xB100, (uint8_t *) &slider_wheel_setup_1[1], 20);
+    this->write_register16(0xC000, (uint8_t *) &gpio_setting_0[1], 6);
+    this->write_register16(0xC100, (uint8_t *) &gpio_setting_1[1], 6);
+    this->write_register16(0xC200, (uint8_t *) &gpio_setting_2[1], 6);
+    this->write_register(0xD0, (uint8_t *) &pmu_sys_setting[1], sizeof(pmu_sys_setting) - 1);
 
     this->i2c_stop_and_delay_();
   }
@@ -1121,13 +1121,13 @@ void IQS7222CComponent::write_settings_() {
 
     //   WAIT_FOR_RDY_WINDOW();
     //   // this->i2c_read_registers_((uint8_t *) &ch_setup_reg, 2, (uint8_t *) &data, 2);
-    //   // this->read_register16(ch_setup_reg2, (uint8_t *) &data2, 2, false);
+    //   // this->read_register16(ch_setup_reg2, (uint8_t *) &data2, 2);
     //   this->read_register((uint8_t) ch_setup_reg, (uint8_t *) &data2, 2);
     //   ESP_LOGD(TAG, "iqs7222c channel config [%d] 0x%04X", ch_num, data2);
     //   //    this->i2c_stop_and_delay_();
     // }
     WAIT_FOR_RDY_WINDOW();
-    this->read_register16(ch_setup_reg2, (uint8_t *) &data2, 2, false);
+    this->read_register16(ch_setup_reg2, (uint8_t *) &data2, 2);
     ESP_LOGD(TAG, "iqs7222c channel config [%u] 0x%04X", ch_num, data2);
   }
 }
@@ -1258,9 +1258,9 @@ void IQS7222CComponent::i2c_read_registers_(uint8_t *addr, uint16_t addr_size, u
 
   i2c::ErrorCode err;
   if (addr_size == 2) {
-    err = this->read_register16(*((uint16_t *) addr), data, data_len, false);
+    err = this->read_register16(*((uint16_t *) addr), data, data_len);
   } else {
-    err = this->read_register(*addr, data, data_len, false);
+    err = this->read_register(*addr, data, data_len);
   }
 
   /* If the sensor is not ready to read data, it returns 0xEEEE */
@@ -1270,9 +1270,9 @@ void IQS7222CComponent::i2c_read_registers_(uint8_t *addr, uint16_t addr_size, u
     memset(data, 0, data_len);
     this->i2c_stop_and_delay_();
     if (addr_size == 2) {
-      err = this->read_register16(*((uint16_t *) addr), data, data_len, false);
+      err = this->read_register16(*((uint16_t *) addr), data, data_len);
     } else {
-      err = this->read_register(*addr, data, data_len, false);
+      err = this->read_register(*addr, data, data_len);
     }
   }
 }
